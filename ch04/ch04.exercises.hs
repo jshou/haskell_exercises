@@ -1,5 +1,6 @@
 import Char
 
+-- 1
 asInt_fold :: String -> Int
 asInt_fold s
   | head s == '-' = -1 * asInt_fold (tail s)
@@ -10,6 +11,7 @@ asInt_fold s
                               then i
                               else error "non digit character"
 
+-- 2
 -- type ErrorMessage = String
 -- asInt_either :: String -> Either String Int
 -- asInt_either s
@@ -21,3 +23,8 @@ asInt_fold s
 --                           in if i < 10
 --                               then Right i
 --                               else Left "non digit character"
+
+-- 3
+concat :: [[a]] -> [a]
+concat xs = foldr step [] xs where
+  step acc b = acc ++ b
